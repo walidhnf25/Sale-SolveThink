@@ -19,7 +19,7 @@
 
         <div class="card border-0 mx-auto" style="max-width: 600px;">
             <div class="card-header text-white text-center">
-                <h4 class="mb-0 fw-bold">Pembelian Komponen Elektronika</h4>
+                <h4 class="mb-0 fw-bold">Penyewaan Komponen Elektronika</h4>
             </div>
             <div class="card-body p-4">
                 <form action="{{ route('pesanan.store') }}" method="POST" enctype="multipart/form-data">
@@ -38,78 +38,174 @@
                     </div>
 
                     <div class="accordion" id="komponenAccordion">
-                        <!-- Jenis 1 -->
+
+                        <!-- Jenis: Microcontroller -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJenis1" aria-expanded="true" aria-controls="collapseJenis1">
-                                    <i class="fas fa-microchip me-2"></i> Jenis 1
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMicrocontroller" aria-expanded="true" aria-controls="collapseMicrocontroller">
+                                    <i class="fas fa-microchip me-2"></i> Microcontroller
                                 </button>
                             </h2>
-                            <div id="collapseJenis1" class="accordion-collapse collapse show" data-bs-parent="#komponenAccordion">
-                                <div class="accordion-body">
-                                    <div class="komponen-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <span class="fw-medium">Komponen A</span>
-                                            <div class="small text-muted">Rp. 0</div>
-                                        </div>
+                            <div id="collapseMicrocontroller" class="accordion-collapse collapse show" data-bs-parent="#komponenAccordion">
+                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span class="fw-medium">Komponen A</span>
+                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
+                                    </div>
+                                    <div class="me-3">
+                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
                                         <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_jenis1')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" name="komponen_a_jenis1" id="komponen_a_jenis1" value="0" oninput="validateInput('komponen_a_jenis1')" onblur="validateInput('komponen_a_jenis1')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_jenis1')"><i class="fas fa-plus"></i></button>
+                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_microcontroller')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="komponen_a_microcontroller" value="0" oninput="validateInput('komponen_a_microcontroller')" onblur="validateInput('komponen_a_microcontroller')">
+                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_microcontroller')"><i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
-
-                                    <div class="komponen-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <span class="fw-medium">Komponen B</span>
-                                            <div class="small text-muted">Rp. 0</div>
-                                        </div>
+                                    <div>
+                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
                                         <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_b_jenis1')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" name="komponen_b_jenis1" id="komponen_b_jenis1" value="0" oninput="validateInput('komponen_b_jenis1')" onblur="validateInput('komponen_b_jenis1')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_b_jenis1')"><i class="fas fa-plus"></i></button>
+                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_microcontroller')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_microcontroller" value="0" oninput="validateInput('minggu_komponen_a_microcontroller')" onblur="validateInput('minggu_komponen_a_microcontroller')">
+                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_microcontroller')"><i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Jenis 2 -->
+                        <!-- Jenis: Sensor -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJenis2" aria-expanded="false" aria-controls="collapseJenis2">
-                                    <i class="fas fa-memory me-2"></i> Jenis 2
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSensor" aria-expanded="false" aria-controls="collapseSensor">
+                                    <i class="fas fa-thermometer-half me-2"></i> Sensor
                                 </button>
                             </h2>
-                            <div id="collapseJenis2" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
-                                <div class="accordion-body">
-                                    <div class="komponen-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <span class="fw-medium">Komponen A</span>
-                                            <div class="small text-muted">Rp. 0</div>
-                                        </div>
+                            <div id="collapseSensor" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
+                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span class="fw-medium">Komponen A</span>
+                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
+                                    </div>
+                                    <div class="me-3">
+                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
                                         <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_jenis2')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" name="komponen_a_jenis2" id="komponen_a_jenis2" value="0" oninput="validateInput('komponen_a_jenis2')" onblur="validateInput('komponen_a_jenis2')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_jenis2')"><i class="fas fa-plus"></i></button>
+                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_sensor')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="komponen_a_sensor" value="0" oninput="validateInput('komponen_a_sensor')" onblur="validateInput('komponen_a_sensor')">
+                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_sensor')"><i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
-
-                                    <div class="komponen-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <span class="fw-medium">Komponen B</span>
-                                            <div class="small text-muted">Rp. 0</div>
-                                        </div>
+                                    <div>
+                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
                                         <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_b_jenis2')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" name="komponen_b_jenis2" id="komponen_b_jenis2" value="0" oninput="validateInput('komponen_b_jenis2')" onblur="validateInput('komponen_b_jenis2')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_b_jenis2')"><i class="fas fa-plus"></i></button>
+                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_sensor')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_sensor" value="0" oninput="validateInput('minggu_komponen_a_sensor')" onblur="validateInput('minggu_komponen_a_sensor')">
+                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_sensor')"><i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Jenis: Actuator -->
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseActuator" aria-expanded="false" aria-controls="collapseActuator">
+                                    <i class="fas fa-cogs me-2"></i> Actuator
+                                </button>
+                            </h2>
+                            <div id="collapseActuator" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
+                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span class="fw-medium">Komponen A</span>
+                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
+                                    </div>
+                                    <div class="me-3">
+                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_actuator')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="komponen_a_actuator" value="0" oninput="validateInput('komponen_a_actuator')" onblur="validateInput('komponen_a_actuator')">
+                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_actuator')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_actuator')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_actuator" value="0" oninput="validateInput('minggu_komponen_a_actuator')" onblur="validateInput('minggu_komponen_a_actuator')">
+                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_actuator')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jenis: Power -->
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePower" aria-expanded="false" aria-controls="collapsePower">
+                                    <i class="fas fa-bolt me-2"></i> Power
+                                </button>
+                            </h2>
+                            <div id="collapsePower" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
+                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span class="fw-medium">Komponen A</span>
+                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
+                                    </div>
+                                    <div class="me-3">
+                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_power')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="komponen_a_power" value="0" oninput="validateInput('komponen_a_power')" onblur="validateInput('komponen_a_power')">
+                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_power')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_power')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_power" value="0" oninput="validateInput('minggu_komponen_a_power')" onblur="validateInput('minggu_komponen_a_power')">
+                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_power')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jenis: Equipment -->
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEquipment" aria-expanded="false" aria-controls="collapseEquipment">
+                                    <i class="fas fa-toolbox me-2"></i> Equipment
+                                </button>
+                            </h2>
+                            <div id="collapseEquipment" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
+                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
+                                    <div>
+                                        <span class="fw-medium">Komponen A</span>
+                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
+                                    </div>
+                                    <div class="me-3">
+                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_equipment')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="komponen_a_equipment" value="0" oninput="validateInput('komponen_a_equipment')" onblur="validateInput('komponen_a_equipment')">
+                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_equipment')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
+                                        <div class="input-group qty-input">
+                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_equipment')"><i class="fas fa-minus"></i></button>
+                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_equipment" value="0" oninput="validateInput('minggu_komponen_a_equipment')" onblur="validateInput('minggu_komponen_a_equipment')">
+                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_equipment')"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
 
                     <div class="alert-total text-center fw-bold mt-4 mb-4">
                         <i class="fas fa-shopping-cart me-2"></i> Total Harga: Rp. 0

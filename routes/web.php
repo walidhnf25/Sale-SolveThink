@@ -15,7 +15,7 @@ use App\Http\Controllers\PesananController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 // Add this route for form submission

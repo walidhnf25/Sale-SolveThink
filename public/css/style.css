@@ -309,3 +309,69 @@ body {
     background-color: rgba(99, 102, 241, 0.05);
     border-color: var(--primary);
 }
+
+
+/* Desktop styles */
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+}
+
+.modal-footer button,
+.modal-footer a {
+    width: 48%; /* Allow space between buttons */
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
+        margin: 10px auto;
+    }
+
+    .modal-content {
+        border-radius: 12px;
+    }
+
+    .modal-header {
+        padding: 10px 15px;
+    }
+
+    .modal-header .modal-title {
+        font-size: 1rem;
+    }
+
+    .modal-body {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .modal-body p {
+        margin-bottom: 10px;
+    }
+
+    .modal-footer {
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .modal-footer button,
+    .modal-footer a {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    .selected-file {
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .form-text {
+        font-size: 12px;
+    }
+}

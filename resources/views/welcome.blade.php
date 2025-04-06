@@ -17,9 +17,9 @@
         </div>
         @endif
 
-        <div class="card border-0 mx-auto" style="max-width: 600px;">
+        <div class="card border-0 mx-auto" style="max-width: 700px;">
             <div class="card-header text-white text-center">
-                <h4 class="mb-0 fw-bold">Penyewaan Komponen Elektronika</h4>
+                <h4 class="mb-0 fw-bold">Pembelian Komponen Elektronika</h4>
             </div>
             <div class="card-body p-4">
                 <form action="{{ route('pesanan.store') }}" method="POST" enctype="multipart/form-data">
@@ -38,166 +38,186 @@
                     </div>
 
                     <div class="accordion" id="komponenAccordion">
-
-                        <!-- Jenis: Microcontroller -->
+                        <!-- Komponen: Microcontroller -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMicrocontroller" aria-expanded="true" aria-controls="collapseMicrocontroller">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseMicrocontroller" aria-expanded="true" aria-controls="collapseMicrocontroller">
                                     <i class="fas fa-microchip me-2"></i> Microcontroller
                                 </button>
                             </h2>
                             <div id="collapseMicrocontroller" class="accordion-collapse collapse show" data-bs-parent="#komponenAccordion">
-                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
-                                    <div>
-                                        <span class="fw-medium">Komponen A</span>
-                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
-                                    </div>
-                                    <div class="me-3">
-                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_microcontroller')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="komponen_a_microcontroller" value="0" oninput="validateInput('komponen_a_microcontroller')" onblur="validateInput('komponen_a_microcontroller')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_microcontroller')"><i class="fas fa-plus"></i></button>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <!-- Info Komponen -->
+                                        <div class="col-md-6 mb-3">
+                                            <span class="fw-medium d-block">Arduino UNO R3</span>
+                                            <small class="text-muted">Rp. 75.000</small>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_microcontroller')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_microcontroller" value="0" oninput="validateInput('minggu_komponen_a_microcontroller')" onblur="validateInput('minggu_komponen_a_microcontroller')">
-                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_microcontroller')"><i class="fas fa-plus"></i></button>
+                                        <div class="col-12 col-md-6">
+                                            <div class="row justify-content-md-end justify-content-start">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label small">Jumlah Komponen</label>
+                                                    <div class="input-group qty-input">
+                                                        <button class="btn btn-outline-danger" type="button" onclick="decreaseValue('komponen_secondary')">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" class="form-control text-center" id="komponen_secondary" value="0"
+                                                            oninput="validateInput('komponen_secondary')" onblur="validateInput('komponen_secondary')">
+                                                        <button class="btn btn-outline-success" type="button" onclick="increaseValue('komponen_secondary')">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div> <!-- end row -->
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Jenis: Sensor -->
+                        <!-- Komponen: Sensor -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSensor" aria-expanded="false" aria-controls="collapseSensor">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSensor" aria-expanded="false" aria-controls="collapseSensor">
                                     <i class="fas fa-thermometer-half me-2"></i> Sensor
                                 </button>
                             </h2>
                             <div id="collapseSensor" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
-                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
-                                    <div>
-                                        <span class="fw-medium">Komponen A</span>
-                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
-                                    </div>
-                                    <div class="me-3">
-                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_sensor')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="komponen_a_sensor" value="0" oninput="validateInput('komponen_a_sensor')" onblur="validateInput('komponen_a_sensor')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_sensor')"><i class="fas fa-plus"></i></button>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <span class="fw-medium d-block">DHT11 (Temperature & Humidity)</span>
+                                            <small class="text-muted">Rp. 20.000</small>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_sensor')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_sensor" value="0" oninput="validateInput('minggu_komponen_a_sensor')" onblur="validateInput('minggu_komponen_a_sensor')">
-                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_sensor')"><i class="fas fa-plus"></i></button>
+                                        <div class="col-12 col-md-6">
+                                            <div class="row justify-content-md-end justify-content-start">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label small">Jumlah Komponen</label>
+                                                    <div class="input-group qty-input">
+                                                        <button class="btn btn-outline-danger" type="button" onclick="decreaseValue('komponen_secondary')">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" class="form-control text-center" id="komponen_secondary" value="0"
+                                                            oninput="validateInput('komponen_secondary')" onblur="validateInput('komponen_secondary')">
+                                                        <button class="btn btn-outline-success" type="button" onclick="increaseValue('komponen_secondary')">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Jenis: Actuator -->
+                        <!-- Komponen: Actuator -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseActuator" aria-expanded="false" aria-controls="collapseActuator">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseActuator" aria-expanded="false" aria-controls="collapseActuator">
                                     <i class="fas fa-cogs me-2"></i> Actuator
                                 </button>
                             </h2>
                             <div id="collapseActuator" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
-                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
-                                    <div>
-                                        <span class="fw-medium">Komponen A</span>
-                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
-                                    </div>
-                                    <div class="me-3">
-                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_actuator')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="komponen_a_actuator" value="0" oninput="validateInput('komponen_a_actuator')" onblur="validateInput('komponen_a_actuator')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_actuator')"><i class="fas fa-plus"></i></button>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <span class="fw-medium d-block">Servo Motor SG90</span>
+                                            <small class="text-muted">Rp. 30.000</small>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_actuator')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_actuator" value="0" oninput="validateInput('minggu_komponen_a_actuator')" onblur="validateInput('minggu_komponen_a_actuator')">
-                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_actuator')"><i class="fas fa-plus"></i></button>
+                                        <div class="col-12 col-md-6">
+                                            <div class="row justify-content-md-end justify-content-start">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label small">Jumlah Komponen</label>
+                                                    <div class="input-group qty-input">
+                                                        <button class="btn btn-outline-danger" type="button" onclick="decreaseValue('komponen_secondary')">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" class="form-control text-center" id="komponen_secondary" value="0"
+                                                            oninput="validateInput('komponen_secondary')" onblur="validateInput('komponen_secondary')">
+                                                        <button class="btn btn-outline-success" type="button" onclick="increaseValue('komponen_secondary')">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Jenis: Power -->
+                        <!-- Komponen: Power -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePower" aria-expanded="false" aria-controls="collapsePower">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsePower" aria-expanded="false" aria-controls="collapsePower">
                                     <i class="fas fa-bolt me-2"></i> Power
                                 </button>
                             </h2>
                             <div id="collapsePower" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
-                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
-                                    <div>
-                                        <span class="fw-medium">Komponen A</span>
-                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
-                                    </div>
-                                    <div class="me-3">
-                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_power')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="komponen_a_power" value="0" oninput="validateInput('komponen_a_power')" onblur="validateInput('komponen_a_power')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_power')"><i class="fas fa-plus"></i></button>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <span class="fw-medium d-block">Battery Li-Ion 18650</span>
+                                            <small class="text-muted">Rp. 15.000</small>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_power')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_power" value="0" oninput="validateInput('minggu_komponen_a_power')" onblur="validateInput('minggu_komponen_a_power')">
-                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_power')"><i class="fas fa-plus"></i></button>
+                                        <div class="col-12 col-md-6">
+                                            <div class="row justify-content-md-end justify-content-start">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label small">Jumlah Komponen</label>
+                                                    <div class="input-group qty-input">
+                                                        <button class="btn btn-outline-danger" type="button" onclick="decreaseValue('komponen_secondary')">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" class="form-control text-center" id="komponen_secondary" value="0"
+                                                            oninput="validateInput('komponen_secondary')" onblur="validateInput('komponen_secondary')">
+                                                        <button class="btn btn-outline-success" type="button" onclick="increaseValue('komponen_secondary')">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Jenis: Equipment -->
+                        <!-- Komponen: Equipment -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEquipment" aria-expanded="false" aria-controls="collapseEquipment">
-                                    <i class="fas fa-toolbox me-2"></i> Equipment
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEquipment" aria-expanded="false" aria-controls="collapseEquipment">
+                                    <i class="fas fa-tools me-2"></i> Equipment
                                 </button>
                             </h2>
                             <div id="collapseEquipment" class="accordion-collapse collapse" data-bs-parent="#komponenAccordion">
-                                <div class="komponen-item d-flex justify-content-between align-items-center w-100">
-                                    <div>
-                                        <span class="fw-medium">Komponen A</span>
-                                        <div class="small text-muted">Rp. 0 / 1 Minggu</div>
-                                    </div>
-                                    <div class="me-3">
-                                        <label class="form-label mb-1 small">Jumlah Komponen</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('komponen_a_equipment')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="komponen_a_equipment" value="0" oninput="validateInput('komponen_a_equipment')" onblur="validateInput('komponen_a_equipment')">
-                                            <button class="btn" type="button" onclick="increaseValue('komponen_a_equipment')"><i class="fas fa-plus"></i></button>
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <span class="fw-medium d-block">Solder Listrik 40W</span>
+                                            <small class="text-muted">Rp. 25.000</small>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label class="form-label mb-1 small">Jumlah Minggu</label>
-                                        <div class="input-group qty-input">
-                                            <button class="btn" type="button" onclick="decreaseValue('minggu_komponen_a_equipment')"><i class="fas fa-minus"></i></button>
-                                            <input type="text" class="form-control text-center" id="minggu_komponen_a_equipment" value="0" oninput="validateInput('minggu_komponen_a_equipment')" onblur="validateInput('minggu_komponen_a_equipment')">
-                                            <button class="btn" type="button" onclick="increaseValue('minggu_komponen_a_equipment')"><i class="fas fa-plus"></i></button>
+                                        <div class="col-12 col-md-6">
+                                            <div class="row justify-content-md-end justify-content-start">
+                                                <div class="col-12 col-md-6 mb-3">
+                                                    <label class="form-label small">Jumlah Komponen</label>
+                                                    <div class="input-group qty-input">
+                                                        <button class="btn btn-outline-danger" type="button" onclick="decreaseValue('komponen_secondary')">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        <input type="text" class="form-control text-center" id="komponen_secondary" value="0"
+                                                            oninput="validateInput('komponen_secondary')" onblur="validateInput('komponen_secondary')">
+                                                        <button class="btn btn-outline-success" type="button" onclick="increaseValue('komponen_secondary')">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +225,6 @@
                         </div>
 
                     </div>
-
 
                     <div class="alert-total text-center fw-bold mt-4 mb-4">
                         <i class="fas fa-shopping-cart me-2"></i> Total Harga: Rp. 0
@@ -232,6 +251,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- QRIS Modal -->
                     <div class="modal fade" id="qrisModal" tabindex="-1" aria-labelledby="qrisModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -251,6 +271,7 @@
                         </div>
                     </div>
 
+                    <!-- Upload Bukti Bayar -->
                     <label class="btn upload-btn w-100 position-relative">
                         <i class="fas fa-upload me-2"></i> Upload Bukti Bayar
                         <input type="file" name="bukti_bayar" class="d-none">
@@ -278,7 +299,8 @@
                     <button type="submit" class="btn btn-success submit-btn w-100 mt-3">
                         <i class="fas fa-paper-plane me-2"></i> KIRIM PESANAN
                     </button>
-                    <!-- Modal Konfirmasi Pesanan -->
+
+                    <!-- Modal Konfirmasi WhatsApp -->
                     <div class="modal fade" id="pesananModal" tabindex="-1" aria-labelledby="pesananModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content border-0 shadow">
@@ -287,15 +309,20 @@
                                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                 </div>
                                 <div class="modal-body text-start p-4">
-                                    <p class="mb-3">Terimakasih telah melakukan pemesanan, Harap konfirmasi pesanan anda ke WhatsApp Admin agar dapat diproses.</p>
-                                    <p><strong>Format Konfirmasi:</strong></p>
-                                    <p>Nama: (Nama Anda)<br>Alamat: (Alamat Anda)<br>Pengambilan: Diantar/Ambil di Toko</p>
+                                    <p class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Terimakasih telah melakukan pemesanan.</p>
+                                    <p class="mb-3"><i class="fas fa-bell me-2 text-warning"></i>Harap konfirmasi pesanan anda ke WhatsApp Admin agar dapat diproses.</p>
+                                    <p class="mb-1"><strong><i class="fas fa-list-alt me-2"></i>Format Konfirmasi:</strong></p>
+                                    <small>
+                                        <i class="fas fa-user me-2"></i> Nama: (Nama Anda)<br>
+                                        <i class="fas fa-map-marker-alt me-2"></i> Alamat: (Alamat Anda)<br>
+                                        <i class="fas fa-truck me-2"></i> Pengambilan: Diantar / Ambil di Toko
+                                    </small>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
                                     <button type="button" id="backToOrderBtn" class="btn btn-secondary">
-                                        <i class="fas fa-rotate-left me-2"></i> Kembali Memesan
+                                        <i class="fas fa-rotate-left me-2"></i> Kembali ke Form
                                     </button>
-                                    <a id="whatsappLink" href="#" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp me-2"></i>Konfirmasi Pesanan</a>
+                                    <a id="whatsappLink" href="#" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp me-2"></i>Konfirmasi Pemesanan</a>
                                 </div>
                             </div>
                         </div>

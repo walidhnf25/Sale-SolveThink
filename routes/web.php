@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PesananController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,5 @@ use App\Http\Controllers\PesananController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-// Add this route for form submission
-Route::post('/pesanan', [PesananController::class, 'store'])->name('pesanan.store');
+Route::get('/', [PenjualanController::class, 'index'])->name('penjualan.index');
+Route::post('/pesanan', [PenjualanController::class, 'store'])->name('penjualan.store');

@@ -310,16 +310,6 @@ body {
     border-color: var(--primary);
 }
 
-
-/* Desktop styles */
-.modal-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 15px;
-}
-
 .modal-footer button,
 .modal-footer a {
     width: 48%; /* Allow space between buttons */
@@ -373,5 +363,21 @@ body {
 
     .form-text {
         font-size: 12px;
+    }
+
+    .swal2-popup-custom {
+        border-radius: 8px !important;
+    }
+    
+    .swal2-title-custom {
+        font-weight: bold;
+        margin: 0 !important;
+        color: white !important;
+    }
+    
+    .swal2-confirm-custom,
+    .swal2-cancel-custom {
+        padding: 8px 20px !important;
+        border-radius: 8px !important;
     }
 }

@@ -60,21 +60,21 @@ class PenjualanController extends Controller
                     ->store('bukti_pembayaran', 'public');
             }
 
+            // Tambahkan tanggal pembelian sekarang
+            $validated['tanggal_pembelian'] = now(); // atau \Carbon\Carbon::now()
+
             // Simpan data penjualan
             $penjualan = Penjualan::create($validated);
 
             // Kurangi stok barang
             $pembelianList = explode(',', $validated['pembelian']);
             foreach ($pembelianList as $item) {
-                // Format item: "Nama Barang: Jumlah"
                 [$namaBarang, $jumlah] = explode(':', trim($item));
                 $jumlah = (int) trim($jumlah);
 
-                // Dapatkan id_nama_barang berdasarkan nama_barang
                 $idNamaBarang = NamaBarang::where('nama_barang', $namaBarang)->value('id');
 
                 if ($idNamaBarang) {
-                    // Hapus sejumlah $jumlah baris dari aset_barang
                     DB::table('aset_barang_baru')
                         ->where('id_nama_barang', $idNamaBarang)
                         ->limit($jumlah)

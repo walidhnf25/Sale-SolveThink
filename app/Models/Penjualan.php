@@ -17,6 +17,7 @@ class Penjualan extends Model
         'alamat_pembeli',
         'pembelian',
         'total_harga',
+        'tanggal_pembelian',
         'bukti_pembayaran_pembeli',
         'pengambilan_barang_pembeli',
     ];

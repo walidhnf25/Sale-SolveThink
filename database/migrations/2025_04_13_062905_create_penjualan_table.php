@@ -19,6 +19,8 @@ class CreatePenjualanTable extends Migration
             $table->string('no_pembeli')->nullable();
             $table->string('alamat_pembeli')->nullable();
             $table->text('pembelian')->nullable();
+            $table->integer('total_harga')->nullable();
+            $table->date('tanggal_pembelian')->nullable();
             $table->string('bukti_pembayaran_pembeli')->nullable();
             $table->string('pengambilan_barang_pembeli')->nullable();
             $table->timestamps();

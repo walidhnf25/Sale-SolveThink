@@ -52,6 +52,11 @@
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
                                             </small>
+                                            @if (!empty($d->namaBarang->deskripsi))
+                                                <a href="{{ $d->namaBarang->deskripsi }}" target="_blank" class="btn btn-sm btn-primary">
+                                                    Detail
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="row justify-content-md-end justify-content-start">
@@ -95,6 +100,11 @@
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
                                             </small>
+                                            @if (!empty($d->namaBarang->deskripsi))
+                                                <a href="{{ $d->namaBarang->deskripsi }}" target="_blank" class="btn btn-sm btn-primary">
+                                                    Detail
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="row justify-content-md-end justify-content-start">
@@ -138,6 +148,11 @@
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
                                             </small>
+                                            @if (!empty($d->namaBarang->deskripsi))
+                                                <a href="{{ $d->namaBarang->deskripsi }}" target="_blank" class="btn btn-sm btn-primary">
+                                                    Detail
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="row justify-content-md-end justify-content-start">
@@ -181,6 +196,11 @@
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
                                             </small>
+                                            @if (!empty($d->namaBarang->deskripsi))
+                                                <a href="{{ $d->namaBarang->deskripsi }}" target="_blank" class="btn btn-sm btn-primary">
+                                                    Detail
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="row justify-content-md-end justify-content-start">
@@ -224,6 +244,11 @@
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
                                             </small>
+                                            @if (!empty($d->namaBarang->deskripsi))
+                                                <a href="{{ $d->namaBarang->deskripsi }}" target="_blank" class="btn btn-sm btn-primary">
+                                                    Detail
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <div class="row justify-content-md-end justify-content-start">
@@ -427,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (jumlah > 0) {
                     total += jumlah * harga;
-                    pembelianList.push(`${nama}: ${jumlah}`);
+                    pembelianList.push(`${nama}: ${jumlah}.`);
                 }
             });
 

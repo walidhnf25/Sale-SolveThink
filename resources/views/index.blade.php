@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <body>
     <div class="container mt-5 mb-5">
-        <div class="card border-0 mx-auto" style="max-width: 700px;">
+        <div class="card border-0 mx-auto" style="max-width: 720px;">
             <div class="card-header text-white text-center">
                 <h4 class="mb-0 fw-bold">Pembelian Komponen Elektronika - SolveThink</h4>
             </div>
@@ -276,13 +276,15 @@
 
                     <input type="hidden" name="pembelian" id="inputPembelian">
 
-                    <div class="alert-total text-center fw-bold mt-4 mb-4">
+                    <div class="alert-total text-center fw-bold mt-3 mb-1">
                         <i class="fas fa-shopping-cart me-2"></i> Total Harga: Rp. 0
                     </div>
+                    <i class="class">*Harga belum termasuk ongkir jika di luar Telkom University Bandung (Sukabirus dan Sukapura)</i><br>
+                    <i class="class">*Ongkir akan diberitahu oleh admin kami setelah melakukan pemesanan</i><br>
 
                     <input type="hidden" name="total_harga" id="inputTotalHarga">
 
-                    <button type="button" class="btn btn-warning w-100 mb-3 py-2" data-bs-toggle="modal" data-bs-target="#qrisModal">
+                    <button type="button" class="btn btn-warning w-100 mb-3 py-2 mt-3" data-bs-toggle="modal" data-bs-target="#qrisModal">
                         <i class="fas fa-qrcode me-2"></i> QRIS
                     </button>
 
@@ -304,12 +306,12 @@
                     </div>
 
                     <!-- Upload Bukti Bayar -->
-                    <label class="btn upload-btn w-100 position-relative">
+                    <label class="btn upload-btn w-100 position-relative mb-1">
                         <i class="fas fa-upload me-2"></i> Upload Bukti Bayar
                         <input type="file" name="bukti_pembayaran_pembeli" id="bukti_pembayaran_pembeli" class="d-none">
                         <span class="file-name d-block mt-2 small text-muted">Belum ada file dipilih</span>
-                        <span class="d-block mt-2 small text-muted">Kosongkan jika pembayaran cash</span>
                     </label>
+                    <i class="class">*Kosongkan jika pembayaran melalui cash</i>
 
                     <div class="mt-4 mb-3">
                         <p class="mb-2 fw-medium">Metode Pengiriman:</p>
@@ -414,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const pengambilan = sessionStorage.getItem('wa_pengambilan') || '(Metode belum dipilih)';
 
     // Format pesan
-    const message = `Halo Admin, saya ingin konfirmasi pesanan.\n\n` +
+    const message = `Halo Admin, saya ingin konfirmasi pesanan pembelian komponen elektronika.\n\n` +
                     `Nama: ${nama}\n` +
                     `Alamat: ${alamat}\n` +
                     `Pengambilan: ${pengambilan}`;

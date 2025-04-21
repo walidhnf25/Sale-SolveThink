@@ -313,7 +313,7 @@
                     </label>
                     <i class="class">*Kosongkan jika pembayaran melalui cash</i>
 
-                    <div class="mt-4 mb-3">
+                    <div class="mt-3 mb-3">
                         <p class="mb-2 fw-medium">Metode Pengiriman:</p>
                         <div class="d-flex flex-wrap gap-3">
                             <div class="form-check shipping-option ps-0">

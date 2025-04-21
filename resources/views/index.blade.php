@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pembelian Komponen Elektronika</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('images/st_ico.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -12,7 +13,7 @@
     <div class="container mt-5 mb-5">
         <div class="card border-0 mx-auto" style="max-width: 700px;">
             <div class="card-header text-white text-center">
-                <h4 class="mb-0 fw-bold">Pembelian Komponen Elektronika</h4>
+                <h4 class="mb-0 fw-bold">Pembelian Komponen Elektronika - SolveThink</h4>
             </div>
             <div class="card-body p-4">
                 <form action="{{ route('penjualan.store') }}" method="POST" enctype="multipart/form-data">
@@ -34,7 +35,7 @@
                         <!-- Komponen: Microcontroller -->
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseMicrocontroller" aria-expanded="false" aria-controls="collapseMicrocontroller">
                                     <i class="fas fa-microchip me-2"></i> Microcontroller
                                 </button>
@@ -314,13 +315,13 @@
                         <div class="d-flex flex-wrap gap-3">
                             <div class="form-check shipping-option ps-0">
                                 <input class="form-check-input" type="radio" name="pengambilan_barang_pembeli" value="Pesanan Diantar" id="pengambilan_barang_pembeli">
-                                <label class="form-check-label d-flex align-items-center bg-primary text-white p-2 w-100" for="pengambilan_barang_pembeli">
+                                <label class="form-check-label d-flex align-items-center bg-primary text-white p-2" style="width: 200px;" for="pengambilan_barang_pembeli">
                                     <i class="fas fa-truck me-2 text-white"></i> Pesanan Diantar
                                 </label>
                             </div>
                             <div class="form-check shipping-option ps-0">
                                 <input class="form-check-input" type="radio" name="pengambilan_barang_pembeli" value="Ambil di Toko" id="pengambilan_barang_pembeli">
-                                <label class="form-check-label d-flex align-items-center bg-primary text-white p-2 w-100" for="pengambilan_barang_pembeli">
+                                <label class="form-check-label d-flex align-items-center bg-primary text-white p-2" style="width: 200px;" for="pengambilan_barang_pembeli">
                                     <i class="fas fa-store me-2 text-white"></i> Ambil di Toko
                                 </label>
                             </div>

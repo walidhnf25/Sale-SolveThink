@@ -48,7 +48,7 @@
                                         @php
                                             $stok = $stokPerBarang[$d->id_nama_barang] ?? 0;
                                         @endphp
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-6">
                                             <span class="fw-medium d-block">{{ $d->namaBarang->nama_barang ?? '-' }}</span>
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
@@ -59,7 +59,7 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 mb-3">
                                             <div class="row justify-content-md-end justify-content-start">
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label small">Jumlah Komponen</label>
@@ -96,7 +96,7 @@
                                     @php
                                         $stok = $stokPerBarang[$d->id_nama_barang] ?? 0;
                                     @endphp
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-6">
                                             <span class="fw-medium d-block">{{ $d->namaBarang->nama_barang ?? '-' }}</span>
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
@@ -107,7 +107,7 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 mb-3">
                                             <div class="row justify-content-md-end justify-content-start">
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label small">Jumlah Komponen</label>
@@ -144,7 +144,7 @@
                                         @php
                                             $stok = $stokPerBarang[$d->id_nama_barang] ?? 0;
                                         @endphp
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-6">
                                             <span class="fw-medium d-block">{{ $d->namaBarang->nama_barang ?? '-' }}</span>
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
@@ -155,7 +155,7 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 mb-3">
                                             <div class="row justify-content-md-end justify-content-start">
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label small">Jumlah Komponen</label>
@@ -192,7 +192,7 @@
                                         @php
                                             $stok = $stokPerBarang[$d->id_nama_barang] ?? 0;
                                         @endphp
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-6">
                                             <span class="fw-medium d-block">{{ $d->namaBarang->nama_barang ?? '-' }}</span>
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
@@ -203,7 +203,7 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 mb-3">
                                             <div class="row justify-content-md-end justify-content-start">
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label small">Jumlah Komponen</label>
@@ -240,7 +240,7 @@
                                         @php
                                             $stok = $stokPerBarang[$d->id_nama_barang] ?? 0;
                                         @endphp
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-6">
                                             <span class="fw-medium d-block">{{ $d->namaBarang->nama_barang ?? '-' }}</span>
                                             <small class="text-muted">
                                                 Rp. {{ number_format($d->harga_jual_barang, 0, ',', '.') }}
@@ -251,7 +251,7 @@
                                                 </a>
                                             @endif
                                         </div>
-                                        <div class="col-12 col-md-6">
+                                        <div class="col-12 col-md-6 mb-3">
                                             <div class="row justify-content-md-end justify-content-start">
                                                 <div class="col-12 col-md-6 mb-3">
                                                     <label class="form-label small">Jumlah Komponen</label>

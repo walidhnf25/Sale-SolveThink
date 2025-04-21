@@ -308,6 +308,7 @@
                         <i class="fas fa-upload me-2"></i> Upload Bukti Bayar
                         <input type="file" name="bukti_pembayaran_pembeli" id="bukti_pembayaran_pembeli" class="d-none">
                         <span class="file-name d-block mt-2 small text-muted">Belum ada file dipilih</span>
+                        <span class="d-block mt-2 small text-muted">Kosongkan jika pembayaran cash</span>
                     </label>
 
                     <div class="mt-4 mb-3">

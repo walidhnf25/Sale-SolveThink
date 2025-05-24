@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Penjualan;
 
 class PenjualanApiController extends Controller
@@ -61,7 +62,7 @@ class PenjualanApiController extends Controller
             ], 404);
         }
 
-        // Update data
+        // Update data dasar
         $penjualan->nama_pembeli = $request->nama_pembeli;
         $penjualan->no_pembeli = $request->no_pembeli;
         $penjualan->alamat_pembeli = $request->alamat_pembeli;
@@ -72,12 +73,19 @@ class PenjualanApiController extends Controller
 
         // Jika ada upload bukti pembayaran baru
         if ($request->hasFile('bukti_pembayaran_pembeli')) {
+            // Hapus file lama jika ada
+            if ($penjualan->bukti_pembayaran_pembeli && Storage::disk('public')->exists($penjualan->bukti_pembayaran_pembeli)) {
+                Storage::disk('public')->delete($penjualan->bukti_pembayaran_pembeli);
+            }
+
+            // Simpan file baru
             $file = $request->file('bukti_pembayaran_pembeli');
             $filename = time() . '_' . $file->getClientOriginalName();
             $path = $file->storeAs('bukti_pembayaran', $filename, 'public');
             $penjualan->bukti_pembayaran_pembeli = $path;
         }
 
+        // Simpan perubahan
         $penjualan->save();
 
         return response()->json([

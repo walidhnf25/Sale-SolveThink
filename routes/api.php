@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/penjualan-komponen-solvethink', [PenjualanApiController::class, 'index']);
+Route::get('/penjualan-komponen-solvethink/{id}', [PenjualanApiController::class, 'show']);
+Route::put('/penjualan-komponen-solvethink/{id}', [PenjualanApiController::class, 'update']);

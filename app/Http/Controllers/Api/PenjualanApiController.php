@@ -18,4 +18,72 @@ class PenjualanApiController extends Controller
             'data' => $data
         ]);
     }
+
+    public function show($id)
+    {
+        $penjualan = Penjualan::find($id);
+
+        if (!$penjualan) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Data penjualan tidak ditemukan',
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Detail Penjualan',
+            'data' => $penjualan
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Validasi input
+        $request->validate([
+            'nama_pembeli' => 'required',
+            'no_pembeli' => 'required',
+            'alamat_pembeli' => 'required',
+            'pembelian' => 'required',
+            'total_harga' => 'required',
+            'tanggal_pembelian' => 'required',
+            'pengambilan_barang_pembeli' => 'required',
+            'bukti_pembayaran_pembeli' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        // Cari data berdasarkan ID
+        $penjualan = Penjualan::find($id);
+
+        if (!$penjualan) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Data penjualan tidak ditemukan',
+            ], 404);
+        }
+
+        // Update data
+        $penjualan->nama_pembeli = $request->nama_pembeli;
+        $penjualan->no_pembeli = $request->no_pembeli;
+        $penjualan->alamat_pembeli = $request->alamat_pembeli;
+        $penjualan->pembelian = $request->pembelian;
+        $penjualan->total_harga = $request->total_harga;
+        $penjualan->tanggal_pembelian = $request->tanggal_pembelian;
+        $penjualan->pengambilan_barang_pembeli = $request->pengambilan_barang_pembeli;
+
+        // Jika ada upload bukti pembayaran baru
+        if ($request->hasFile('bukti_pembayaran_pembeli')) {
+            $file = $request->file('bukti_pembayaran_pembeli');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = $file->storeAs('bukti_pembayaran', $filename, 'public');
+            $penjualan->bukti_pembayaran_pembeli = $path;
+        }
+
+        $penjualan->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Data penjualan berhasil diperbarui',
+            'data' => $penjualan
+        ]);
+    }
 }
